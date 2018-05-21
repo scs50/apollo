@@ -281,8 +281,8 @@ Status LonController::ComputeControlCommand(
             debug->is_full_stop());
   }
 
-  cmd->set_throttle(throttle_cmd);
-  cmd->set_brake(brake_cmd);
+  cmd->set_throttle(50); //throttle_cmd);
+  cmd->set_brake(0);//brake_cmd);
 
   if (std::fabs(VehicleStateProvider::instance()->linear_velocity()) <=
           vehicle_param_.max_abs_speed_when_stopped() ||
