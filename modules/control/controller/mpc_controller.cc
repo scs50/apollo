@@ -378,7 +378,7 @@ Status MPCController::ComputeControlCommand(
     debug->set_steer_angle_limited(steer_angle_limited);
   } else {
     steer_angle = digital_filter_.Filter(steer_angle);
-    cmd->set_steering_target(steer_angle);
+    cmd->set_steering_target(0);//steer_angle);
   }
 
   debug->set_acceleration_cmd_closeloop(control[0](1, 0));
@@ -422,8 +422,8 @@ Status MPCController::ComputeControlCommand(
   }
 
   cmd->set_steering_rate(FLAGS_steer_angle_rate);
-  cmd->set_throttle(throttle_cmd);
-  cmd->set_brake(brake_cmd);
+  cmd->set_throttle(50);//throttle_cmd);
+  cmd->set_brake(0);//brake_cmd);
 
   debug->set_heading(VehicleStateProvider::instance()->heading());
   debug->set_steering_position(chassis->steering_percentage());
