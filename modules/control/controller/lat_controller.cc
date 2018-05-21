@@ -341,7 +341,7 @@ Status LatController::ComputeControlCommand(
     steer_angle = pre_steer_angle_;
   }
   pre_steer_angle_ = steer_angle;
-  cmd->set_steering_target(steer_angle);
+  cmd->set_steering_target(0);//steer_angle);
 
   cmd->set_steering_rate(FLAGS_steer_angle_rate);
   // compute extra information for logging and debugging
