@@ -426,7 +426,7 @@ void Planning::SetFallbackCruiseTrajectory(ADCTrajectory* cruise_trajectory) {
     cruise_point->mutable_path_point()->CopyFrom(
         common::util::MakePathPoint(s, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
     cruise_point->mutable_path_point()->set_s(s);
-    cruise_point->set_v(v);
+    cruise_point->set_v(50);//v);
     cruise_point->set_a(0.0);
     cruise_point->set_relative_time(t);
   }
